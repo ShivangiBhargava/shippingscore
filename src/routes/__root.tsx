@@ -77,19 +77,43 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Ship Score — Brutally honest AI critique of your landing page" },
+      {
+        name: "description",
+        content:
+          "Paste a URL. Get a senior PM's brutal, scored critique of your product's landing page in 20 seconds. Product thinking, craft, originality, shippedness — 0 to 100.",
+      },
+      { name: "author", content: "Ship Score" },
+      { property: "og:title", content: "Ship Score — Get roasted by an AI senior PM" },
+      {
+        property: "og:description",
+        content:
+          "Brutally honest, scored critique of any product landing page. Ship it, fix it, or kill it.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Ship Score — Get roasted by an AI senior PM" },
+      {
+        name: "twitter:description",
+        content: "Paste a URL. Get a scored, brutal product critique in 20 seconds.",
+      },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800;9..144,900&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+      },
+    ],
+    scripts: [
+      // Novus.ai analytics — replace data-site with your project ID from the Novus dashboard.
+      {
+        src: "https://cdn.novus.ai/analytics.js",
+        async: true,
+        defer: true,
+        "data-site": "ship-score",
       },
     ],
   }),
@@ -98,6 +122,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
+
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
