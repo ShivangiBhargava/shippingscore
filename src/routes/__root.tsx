@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Paste a URL. Get a senior PM's brutal, scored critique of your product's landing page in 20 seconds. Product thinking, craft, originality, shippedness — 0 to 100.",
       },
       { name: "author", content: "Ship Score" },
-      { property: "og:title", content: "Ship Score — Get roasted by an AI senior PM" },
+      { property: "og:title", content: "Ship Score — Brutally honest AI critique of your landing page" },
       {
         property: "og:description",
         content:
@@ -92,11 +92,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Ship Score — Get roasted by an AI senior PM" },
+      { name: "twitter:title", content: "Ship Score — Brutally honest AI critique of your landing page" },
       {
         name: "twitter:description",
         content: "Paste a URL. Get a scored, brutal product critique in 20 seconds.",
       },
+      { name: "description", content: "Your AI Companion is a versatile AI-powered application designed for hackathon participants to build innovative solutions." },
+      { property: "og:description", content: "Your AI Companion is a versatile AI-powered application designed for hackathon participants to build innovative solutions." },
+      { name: "twitter:description", content: "Your AI Companion is a versatile AI-powered application designed for hackathon participants to build innovative solutions." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
