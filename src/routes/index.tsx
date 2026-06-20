@@ -4,6 +4,14 @@ import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
 import { scoreProject, type ShipScore } from "@/lib/score.functions";
 import { ArrowRight, Loader2, Skull, Wrench, Rocket, Flame } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import novusPersonas from "@/assets/novus-dashboard-personas.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -157,6 +165,7 @@ function Index() {
       {mutation.data && <ScoreResult score={mutation.data} url={url} onReset={() => { mutation.reset(); setUrl(""); router.invalidate(); }} />}
 
       {!mutation.data && !mutation.isPending && <HowItWorks />}
+      {!mutation.data && !mutation.isPending && <Receipts />}
 
       <Footer />
     </main>
@@ -366,6 +375,65 @@ function HowItWorks() {
           honest enough to actually be useful.
         </p>
       </div>
+    </section>
+  );
+}
+
+function Receipts() {
+  const slides = [
+    {
+      src: novusPersonas.url,
+      caption: "Novus.ai Memory → Personas modelled for Ship Score in production.",
+      tag: "Live · Novus.ai",
+    },
+  ];
+  return (
+    <section className="mx-auto max-w-5xl px-6 pb-24 pt-8 border-t border-ink/10">
+      <div className="flex items-end justify-between flex-wrap gap-4 mb-6">
+        <div>
+          <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+            Receipts
+          </div>
+          <h2 className="mt-2 font-serif text-3xl md:text-4xl font-black text-balance">
+            Yes, Novus is actually installed.
+          </h2>
+          <p className="mt-2 text-muted-foreground max-w-xl">
+            Every roast is tracked. Every URL submission, score, and verdict flows
+            into Novus.ai — so Shippedness isn't a claim, it's a screenshot.
+          </p>
+        </div>
+      </div>
+      <Carousel opts={{ loop: true }} className="w-full">
+        <CarouselContent>
+          {slides.map((s, i) => (
+            <CarouselItem key={i}>
+              <figure className="border-2 border-ink rounded-lg overflow-hidden bg-card">
+                <div className="relative bg-paper">
+                  <img
+                    src={s.src}
+                    alt={s.caption}
+                    loading="lazy"
+                    className="block w-full h-auto"
+                  />
+                  <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-ink text-paper font-mono text-[10px] uppercase tracking-widest">
+                    <span className="h-1.5 w-1.5 rounded-full bg-lime animate-pulse" />
+                    {s.tag}
+                  </span>
+                </div>
+                <figcaption className="p-4 border-t-2 border-ink font-mono text-xs text-muted-foreground">
+                  {s.caption}
+                </figcaption>
+              </figure>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        {slides.length > 1 && (
+          <>
+            <CarouselPrevious className="hidden md:inline-flex" />
+            <CarouselNext className="hidden md:inline-flex" />
+          </>
+        )}
+      </Carousel>
     </section>
   );
 }
