@@ -387,6 +387,11 @@ function Receipts() {
       caption: "Novus.ai Memory → Personas modelled for Ship Score in production.",
       tag: "Live · Novus.ai",
     },
+    {
+      src: novusClicks.url,
+      caption: "Novus.ai Pages & Click Events → Real-time visitor and adoption analytics for Ship Score.",
+      tag: "Live · Novus.ai",
+    },
   ];
   return (
     <section className="mx-auto max-w-5xl px-6 pb-24 pt-8 border-t border-ink/10">
@@ -429,10 +434,10 @@ function Receipts() {
           ))}
         </CarouselContent>
         {slides.length > 1 && (
-          <>
-            <CarouselPrevious className="hidden md:inline-flex" />
-            <CarouselNext className="hidden md:inline-flex" />
-          </>
+          <div className="flex justify-end gap-2 mt-4 md:absolute md:-top-12 md:right-0 md:mt-0">
+            <CarouselPrevious className="static translate-y-0" />
+            <CarouselNext className="static translate-y-0" />
+          </div>
         )}
       </Carousel>
     </section>
