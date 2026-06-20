@@ -33,7 +33,46 @@ function Index() {
     let v = url.trim();
     if (!v) return;
     if (!/^https?:\/\//i.test(v)) v = `https://${v}`;
-    mutation.mutate(v);
+
+    let domain = v;
+    try { domain = new URL(v).hostname.replace(/^www\./, ""); } catch {}
+
+    try {
+      pendo.track("url_submitted", {
+        url: v,
+        url_domain: domain,
+        is_example_url: ["linear.app", "vercel.com", "notion.so"].includes(url.trim()),
+      });
+    } catch {}
+
+    mutation.mutate(v, {
+      onSuccess: (data) => {
+        try {
+          pendo.track("score_generated", {
+            url: v,
+            url_domain: domain,
+            product_name: data.productName,
+            overall_score: data.overallScore,
+            product_thinking_score: data.scores.productThinking.score,
+            craft_score: data.scores.craft.score,
+            originality_score: data.scores.originality.score,
+            shippedness_score: data.scores.shippedness.score,
+            verdict: data.shipItOrKillIt,
+            strengths_count: data.strengths.length,
+            weaknesses_count: data.weaknesses.length,
+          });
+        } catch {}
+      },
+      onError: (err) => {
+        try {
+          pendo.track("score_generation_failed", {
+            url: v,
+            url_domain: domain,
+            error_message: ((err as Error)?.message || "Unknown error").substring(0, 100),
+          });
+        } catch {}
+      },
+    });
   };
 
   return (
