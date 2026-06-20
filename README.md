@@ -1,61 +1,66 @@
 # ShippingScore
 
-ShippingScore is a TypeScript project for evaluating and scoring shipping-related data and workflows. This repository contains the app source, styles, and supporting scripts.
+ShippingScore is a small TypeScript utility for evaluating and scoring shipping-related data and workflows. It provides tools to ingest shipping metrics, compute performance scores, and export results for reporting or analysis.
 
-## About
+## Features
 
-This project was created to provide a small, focused toolkit for measuring and scoring shipping performance. It uses TypeScript throughout and includes styling with CSS.
+- TypeScript codebase
+- Scoring utilities for common shipping KPIs
+- Development server and production build scripts
 
-## novus.ai
+## Requirements
 
-This repository is connected to Novus AI (https://novus.ai).
+- Node.js 16+ (check package.json)
+- npm or yarn
 
-- Novus.ai provided assistance during development (code generation, suggestions, or automation). If you used Novus.ai features to generate code or documentation, please document which parts it helped produce.
-- For details and account/settings, visit: https://novus.ai
+## Quick start
 
-## Lovable
-
-This project is connected to Lovable (https://lovable.dev). Important note:
-
-- Avoid rewriting published git history (force-push, rebase/amend/squash of already-pushed commits). Lovable syncs commits and rewriting history may cause loss of project history.
-- Keep branches pushed in a working state as commits sync back to Lovable and appear in the editor.
-
-## Installation
-
-1. Install dependencies:
+1. Install dependencies
 
 ```bash
 npm install
 ```
 
-2. Run the development server:
+2. Start development server
 
 ```bash
 npm run dev
 ```
 
-3. Build for production:
+3. Build for production
 
 ```bash
 npm run build
 ```
 
-## Usage
+4. Run tests (if present)
 
-- Describe how to run the app, configuration, environment variables, or data sources here.
-- Example: `npm run dev` starts a local dev server on the configured port.
+```bash
+npm test
+```
+
+## Configuration
+
+- Use a `.env` file or environment variables for configuration such as PORT or data source credentials if the project requires them.
+- See `package.json` for available scripts and `tsconfig.json` for TypeScript settings.
+
+## Project layout (typical)
+
+- `src/` — TypeScript source
+- `public/` — static assets
+- `styles/` — CSS
+- `package.json`, `tsconfig.json` — project configuration
+
+Adjust as needed for this repository's structure.
 
 ## Contributing
 
-Contributions are welcome. Please open an issue or a pull request with your proposed changes. When contributing, follow these guidelines:
-
-- Do not rewrite published history for branches synced with Lovable.
-- Keep commits focused and well-described.
+Contributions are welcome. Open an issue or a pull request with a clear description of changes and testing steps. Keep commits focused and include tests when applicable.
 
 ## License
 
-Add your license information here (e.g., MIT). If you don't have a license yet, consider adding one to clarify how the project can be used.
+Add a LICENSE file (for example, `MIT`) to clarify usage and distribution rights.
 
-## Contact
+## Maintainer
 
-For questions about this repo, reach out to the maintainer: ShivangiBhargava
+ShivangiBhargava
