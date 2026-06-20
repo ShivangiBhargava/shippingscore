@@ -12,6 +12,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import novusPersonas from "@/assets/novus-dashboard-personas.png.asset.json";
+import novusClicks from "@/assets/novus-dashboard-clicks.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
