@@ -97,14 +97,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "twitter:description",
         content: "Paste a URL. Get a scored, brutal product critique in 20 seconds.",
       },
-      { name: "description", content: "Your AI Companion is a versatile AI-powered application designed for hackathon participants to build innovative solutions." },
-      { property: "og:description", content: "Your AI Companion is a versatile AI-powered application designed for hackathon participants to build innovative solutions." },
-      { name: "twitter:description", content: "Your AI Companion is a versatile AI-powered application designed for hackathon participants to build innovative solutions." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d3802431-a721-405e-897b-0e1b2758109c/id-preview-2963ffed--ba51c14a-fc72-4336-956b-c015902d461b.lovable.app-1781937323465.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d3802431-a721-405e-897b-0e1b2758109c/id-preview-2963ffed--ba51c14a-fc72-4336-956b-c015902d461b.lovable.app-1781937323465.png" },
+      { property: "og:image", content: "/__l5e/assets-v1/7a4e5d16-1823-445f-a871-e754920f1e08/shipscore-icon.png" },
+      { name: "twitter:image", content: "/__l5e/assets-v1/7a4e5d16-1823-445f-a871-e754920f1e08/shipscore-icon.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/png", href: "/__l5e/assets-v1/7a4e5d16-1823-445f-a871-e754920f1e08/shipscore-icon.png" },
+      { rel: "apple-touch-icon", href: "/__l5e/assets-v1/7a4e5d16-1823-445f-a871-e754920f1e08/shipscore-icon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

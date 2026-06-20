@@ -129,9 +129,13 @@ function Header() {
     <header className="border-b border-ink/10">
       <div className="mx-auto max-w-5xl px-6 h-16 flex items-center justify-between">
         <a href="/" className="flex items-center gap-2 font-serif font-black text-xl">
-          <span className="inline-flex h-7 w-7 items-center justify-center rounded-sm bg-ink text-paper font-mono text-sm">
-            S
-          </span>
+          <img
+            src="/__l5e/assets-v1/7a4e5d16-1823-445f-a871-e754920f1e08/shipscore-icon.png"
+            alt="Ship Score logo"
+            width={28}
+            height={28}
+            className="h-7 w-7"
+          />
           Ship&nbsp;Score
         </a>
         <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground hidden sm:block">
@@ -330,9 +334,8 @@ function HowItWorks() {
 function Footer() {
   return (
     <footer className="border-t border-ink/10">
-      <div className="mx-auto max-w-5xl px-6 py-8 flex flex-wrap items-center justify-between gap-3 font-mono text-xs text-muted-foreground">
-        <div>Ship Score · built in a weekend · no feelings spared</div>
-        <div>Powered by Lovable AI · Analytics by Novus.ai</div>
+      <div className="mx-auto max-w-5xl px-6 py-8 font-mono text-xs text-muted-foreground">
+        © {new Date().getFullYear()} Ship Score
       </div>
     </footer>
   );
